@@ -1,43 +1,57 @@
 body {
-  margin: 0;
-  padding: 0;
   font-family: 'Segoe UI', sans-serif;
-  background-color: #f2f2f2;
-}
-
-.app {
-  padding: 30px;
-  max-width: 1200px;
-  margin: auto;
+  margin: 0;
+  background-color: #f8f9fa;
+  color: #333;
 }
 
 h1 {
   text-align: center;
-  color: #3e2f2f;
-  margin-bottom: 20px;
+  margin: 30px 0;
   font-size: 2.5rem;
+  color: #4b2e83;
 }
 
-.search {
-  display: block;
-  margin: 0 auto 30px auto;
-  padding: 12px 20px;
-  width: 80%;
-  max-width: 500px;
-  font-size: 1rem;
-  border-radius: 8px;
-  border: 1px solid #ccc;
-  transition: 0.3s;
-}
-
-.search:focus {
-  outline: none;
-  border-color: #9c27b0;
-  box-shadow: 0 0 5px #9c27b0;
-}
-
-.cards {
+.container {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
   gap: 20px;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  padding: 20px;
+  max-width: 1200px;
+  margin: auto;
+}
+
+.card {
+  background: white;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  transition: transform 0.3s ease;
+  cursor: pointer;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+}
+
+.card img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+}
+
+.card-content {
+  padding: 16px;
+}
+
+.card-content h2 {
+  margin: 0 0 10px;
+  font-size: 1.2rem;
+  color: #4b2e83;
+}
+
+.card-content p {
+  margin: 0;
+  font-size: 0.95rem;
+  color: #666;
 }
