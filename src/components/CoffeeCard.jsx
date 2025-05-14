@@ -1,11 +1,15 @@
-export default function CoffeeCard({ item }) {
+import './CoffeeCard.css';
+
+export default function CoffeeCard({ item, isFavorite, onToggleFavorite }) {
   return (
     <div className="card">
-      <img src={item.image || 'https://via.placeholder.com/300x200?text=Café'} alt={item.title} />
-      <div className="card-content">
-        <h2>{item.title}</h2>
-        <p>{item.description}</p>
-      </div>
+      <img src={item.image} alt={item.title} />
+      <h2>{item.title}</h2>
+      <p><strong>Descripción:</strong> {item.description || 'Sin descripción.'}</p>
+      <p><strong>Ingredientes:</strong> {item.ingredients?.join(', ') || 'No especificados.'}</p>
+      <button onClick={onToggleFavorite}>
+        {isFavorite ? '💖 Favorito' : '🤍 Agregar a Favoritos'}
+      </button>
     </div>
   );
 }
